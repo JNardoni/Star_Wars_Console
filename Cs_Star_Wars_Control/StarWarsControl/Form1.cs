@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
-using System.Linq;
-using System.Text;
-using System.Threading;
+using System.Media;
 
 namespace StarWarsControl
 {
@@ -23,9 +17,17 @@ namespace StarWarsControl
 
         int ct = 0;
 
+        //Communication with Arduino
         SerialPort sPort;
         String portName;
-                        
+
+        //Playing Sounds
+        System.Media.SoundPlayer r2player;
+        System.Media.SoundPlayer enginePlayer;
+
+
+        int soundPlaying = 0;
+                     
         public Form1()
         {
 
@@ -40,10 +42,12 @@ namespace StarWarsControl
             btncom1.Click += new EventHandler(this.btn1onClick);
             button3_1.Click += new EventHandler(this.btn1onClick);
             button3_2.Click += new EventHandler(this.btn1onClick);
+            button5_1.Click += new EventHandler(this.playNoise);
+
 
             //Touchscreen, hide cursor
             // Cursor.Hide(); 
-           // sPort = new SerialPort("/dev/ttyACM0", 9600);
+            // sPort = new SerialPort("/dev/ttyACM0", 9600);
             sPort = new SerialPort("COM6", 9600);
             sPort.DataReceived += serialPort1_DataReceived;
 
@@ -86,6 +90,17 @@ namespace StarWarsControl
             }
 
         }
+
+        private void playNoise(Object sender, EventArgs e)
+        {
+               r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Downloads\R2D2a.wav");
+               r2player.PlayLooping();
+
+               enginePlayer = new System.Media.SoundPlayer(@"C:\Users\Jakid\Downloads\Lonely_Hello.wav");
+               enginePlayer.PlayLooping();
+
+        }
+
 
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
