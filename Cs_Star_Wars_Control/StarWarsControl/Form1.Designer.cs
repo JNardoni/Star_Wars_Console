@@ -31,35 +31,31 @@ namespace StarWarsControl
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.imageShipBack = new System.Windows.Forms.PictureBox();
-            this.button2_1 = new System.Windows.Forms.Button();
+            this.btnhyper3 = new System.Windows.Forms.Button();
             this.button3_1 = new System.Windows.Forms.Button();
             this.btncom3 = new System.Windows.Forms.Button();
             this.btncom2 = new System.Windows.Forms.Button();
             this.btncom1 = new System.Windows.Forms.Button();
-            this.button3_2 = new System.Windows.Forms.Button();
+            this.btnhyper8 = new System.Windows.Forms.Button();
             this.btnshld1 = new System.Windows.Forms.Button();
-            this.button5_1 = new System.Windows.Forms.Button();
-            this.btnshld2 = new System.Windows.Forms.Button();
-            this.button5_2 = new System.Windows.Forms.Button();
-            this.button6_1 = new System.Windows.Forms.Button();
-            this.button6_2 = new System.Windows.Forms.Button();
-            this.button7_1 = new System.Windows.Forms.Button();
-            this.button8_1 = new System.Windows.Forms.Button();
-            this.button9_1 = new System.Windows.Forms.Button();
-            this.button8_2 = new System.Windows.Forms.Button();
-            this.button9_2 = new System.Windows.Forms.Button();
+            this.btnidk1 = new System.Windows.Forms.Button();
+            this.btnshld3 = new System.Windows.Forms.Button();
+            this.btnhyper7 = new System.Windows.Forms.Button();
+            this.btnhyper6 = new System.Windows.Forms.Button();
+            this.btnhyper4 = new System.Windows.Forms.Button();
+            this.btnhyper5 = new System.Windows.Forms.Button();
             this.ventSpeaker = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnhyper2 = new System.Windows.Forms.Button();
+            this.btnhyper1 = new System.Windows.Forms.Button();
+            this.btnengine5 = new System.Windows.Forms.Button();
+            this.btnshld2 = new System.Windows.Forms.Button();
+            this.btnengine1 = new System.Windows.Forms.Button();
+            this.btnengine2 = new System.Windows.Forms.Button();
+            this.btnengine3 = new System.Windows.Forms.Button();
+            this.btnengine7 = new System.Windows.Forms.Button();
+            this.btnengine6 = new System.Windows.Forms.Button();
+            this.btnengine4 = new System.Windows.Forms.Button();
+            this.btnengine8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imageShipBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventSpeaker)).BeginInit();
             this.SuspendLayout();
@@ -70,21 +66,21 @@ namespace StarWarsControl
             this.imageShipBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imageShipBack.BackgroundImage")));
             this.imageShipBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imageShipBack.ErrorImage = null;
-            this.imageShipBack.Location = new System.Drawing.Point(449, 130);
+            this.imageShipBack.Location = new System.Drawing.Point(428, 33);
             this.imageShipBack.Name = "imageShipBack";
             this.imageShipBack.Size = new System.Drawing.Size(518, 282);
             this.imageShipBack.TabIndex = 0;
             this.imageShipBack.TabStop = false;
             // 
-            // button2_1
+            // btnhyper3
             // 
-            this.button2_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2_1.Location = new System.Drawing.Point(1164, 299);
-            this.button2_1.Name = "button2_1";
-            this.button2_1.Size = new System.Drawing.Size(70, 70);
-            this.button2_1.TabIndex = 3;
-            this.button2_1.UseVisualStyleBackColor = false;
+            this.btnhyper3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnhyper3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper3.Location = new System.Drawing.Point(1164, 313);
+            this.btnhyper3.Name = "btnhyper3";
+            this.btnhyper3.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper3.TabIndex = 3;
+            this.btnhyper3.UseVisualStyleBackColor = false;
             // 
             // button3_1
             // 
@@ -99,7 +95,7 @@ namespace StarWarsControl
             // 
             this.btncom3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btncom3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncom3.Location = new System.Drawing.Point(130, 603);
+            this.btncom3.Location = new System.Drawing.Point(135, 603);
             this.btncom3.Name = "btncom3";
             this.btncom3.Size = new System.Drawing.Size(70, 70);
             this.btncom3.TabIndex = 19;
@@ -119,251 +115,211 @@ namespace StarWarsControl
             // 
             this.btncom1.BackColor = System.Drawing.Color.SkyBlue;
             this.btncom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncom1.Location = new System.Drawing.Point(130, 504);
+            this.btncom1.Location = new System.Drawing.Point(135, 504);
             this.btncom1.Name = "btncom1";
             this.btncom1.Size = new System.Drawing.Size(70, 70);
             this.btncom1.TabIndex = 21;
             this.btncom1.UseVisualStyleBackColor = false;
             // 
-            // button3_2
+            // btnhyper8
             // 
-            this.button3_2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3_2.Location = new System.Drawing.Point(1164, 615);
-            this.button3_2.Name = "button3_2";
-            this.button3_2.Size = new System.Drawing.Size(70, 70);
-            this.button3_2.TabIndex = 22;
-            this.button3_2.UseVisualStyleBackColor = false;
+            this.btnhyper8.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnhyper8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper8.Location = new System.Drawing.Point(1164, 603);
+            this.btnhyper8.Name = "btnhyper8";
+            this.btnhyper8.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper8.TabIndex = 22;
+            this.btnhyper8.UseVisualStyleBackColor = false;
             // 
             // btnshld1
             // 
             this.btnshld1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnshld1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnshld1.Location = new System.Drawing.Point(274, 504);
+            this.btnshld1.Location = new System.Drawing.Point(280, 504);
             this.btnshld1.Name = "btnshld1";
             this.btnshld1.Size = new System.Drawing.Size(70, 70);
             this.btnshld1.TabIndex = 23;
             this.btnshld1.UseVisualStyleBackColor = false;
             // 
-            // button5_1
+            // btnidk1
             // 
-            this.button5_1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5_1.Location = new System.Drawing.Point(870, 615);
-            this.button5_1.Name = "button5_1";
-            this.button5_1.Size = new System.Drawing.Size(70, 70);
-            this.button5_1.TabIndex = 24;
-            this.button5_1.UseVisualStyleBackColor = false;
+            this.btnidk1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnidk1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnidk1.Location = new System.Drawing.Point(876, 603);
+            this.btnidk1.Name = "btnidk1";
+            this.btnidk1.Size = new System.Drawing.Size(70, 70);
+            this.btnidk1.TabIndex = 24;
+            this.btnidk1.UseVisualStyleBackColor = false;
             // 
-            // btnshld2
+            // btnshld3
             // 
-            this.btnshld2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnshld2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnshld2.Location = new System.Drawing.Point(274, 603);
-            this.btnshld2.Name = "btnshld2";
-            this.btnshld2.Size = new System.Drawing.Size(70, 70);
-            this.btnshld2.TabIndex = 25;
-            this.btnshld2.UseVisualStyleBackColor = false;
+            this.btnshld3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnshld3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnshld3.Location = new System.Drawing.Point(280, 603);
+            this.btnshld3.Name = "btnshld3";
+            this.btnshld3.Size = new System.Drawing.Size(70, 70);
+            this.btnshld3.TabIndex = 25;
+            this.btnshld3.UseVisualStyleBackColor = false;
             // 
-            // button5_2
+            // btnhyper7
             // 
-            this.button5_2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5_2.Location = new System.Drawing.Point(1067, 615);
-            this.button5_2.Name = "button5_2";
-            this.button5_2.Size = new System.Drawing.Size(70, 70);
-            this.button5_2.TabIndex = 26;
-            this.button5_2.UseVisualStyleBackColor = false;
+            this.btnhyper7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnhyper7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper7.Location = new System.Drawing.Point(1067, 603);
+            this.btnhyper7.Name = "btnhyper7";
+            this.btnhyper7.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper7.TabIndex = 26;
+            this.btnhyper7.UseVisualStyleBackColor = false;
             // 
-            // button6_1
+            // btnhyper6
             // 
-            this.button6_1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6_1.Location = new System.Drawing.Point(1164, 504);
-            this.button6_1.Name = "button6_1";
-            this.button6_1.Size = new System.Drawing.Size(70, 70);
-            this.button6_1.TabIndex = 27;
-            this.button6_1.UseVisualStyleBackColor = false;
+            this.btnhyper6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnhyper6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper6.Location = new System.Drawing.Point(1164, 504);
+            this.btnhyper6.Name = "btnhyper6";
+            this.btnhyper6.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper6.TabIndex = 27;
+            this.btnhyper6.UseVisualStyleBackColor = false;
             // 
-            // button6_2
+            // btnhyper4
             // 
-            this.button6_2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6_2.Location = new System.Drawing.Point(1164, 400);
-            this.button6_2.Name = "button6_2";
-            this.button6_2.Size = new System.Drawing.Size(70, 70);
-            this.button6_2.TabIndex = 28;
-            this.button6_2.UseVisualStyleBackColor = false;
+            this.btnhyper4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnhyper4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper4.Location = new System.Drawing.Point(1164, 409);
+            this.btnhyper4.Name = "btnhyper4";
+            this.btnhyper4.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper4.TabIndex = 28;
+            this.btnhyper4.UseVisualStyleBackColor = false;
             // 
-            // button7_1
+            // btnhyper5
             // 
-            this.button7_1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7_1.Location = new System.Drawing.Point(1067, 504);
-            this.button7_1.Name = "button7_1";
-            this.button7_1.Size = new System.Drawing.Size(70, 70);
-            this.button7_1.TabIndex = 29;
-            this.button7_1.UseVisualStyleBackColor = false;
-            // 
-            // button8_1
-            // 
-            this.button8_1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8_1.Location = new System.Drawing.Point(1358, 468);
-            this.button8_1.Name = "button8_1";
-            this.button8_1.Size = new System.Drawing.Size(50, 50);
-            this.button8_1.TabIndex = 30;
-            this.button8_1.UseVisualStyleBackColor = false;
-            // 
-            // button9_1
-            // 
-            this.button9_1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button9_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9_1.Location = new System.Drawing.Point(1475, 468);
-            this.button9_1.Name = "button9_1";
-            this.button9_1.Size = new System.Drawing.Size(50, 50);
-            this.button9_1.TabIndex = 31;
-            this.button9_1.UseVisualStyleBackColor = false;
-            // 
-            // button8_2
-            // 
-            this.button8_2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button8_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8_2.Location = new System.Drawing.Point(1358, 565);
-            this.button8_2.Name = "button8_2";
-            this.button8_2.Size = new System.Drawing.Size(50, 50);
-            this.button8_2.TabIndex = 32;
-            this.button8_2.UseVisualStyleBackColor = false;
-            // 
-            // button9_2
-            // 
-            this.button9_2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button9_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9_2.Location = new System.Drawing.Point(1475, 565);
-            this.button9_2.Name = "button9_2";
-            this.button9_2.Size = new System.Drawing.Size(50, 50);
-            this.button9_2.TabIndex = 33;
-            this.button9_2.UseVisualStyleBackColor = false;
+            this.btnhyper5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnhyper5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper5.Location = new System.Drawing.Point(1067, 504);
+            this.btnhyper5.Name = "btnhyper5";
+            this.btnhyper5.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper5.TabIndex = 29;
+            this.btnhyper5.UseVisualStyleBackColor = false;
             // 
             // ventSpeaker
             // 
             this.ventSpeaker.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ventSpeaker.BackgroundImage")));
             this.ventSpeaker.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ventSpeaker.Location = new System.Drawing.Point(58, 202);
+            this.ventSpeaker.Location = new System.Drawing.Point(54, 202);
             this.ventSpeaker.Name = "ventSpeaker";
             this.ventSpeaker.Size = new System.Drawing.Size(142, 100);
             this.ventSpeaker.TabIndex = 39;
             this.ventSpeaker.TabStop = false;
             // 
-            // button1
+            // btnhyper2
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1164, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 70);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnhyper2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnhyper2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper2.Location = new System.Drawing.Point(1164, 216);
+            this.btnhyper2.Name = "btnhyper2";
+            this.btnhyper2.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper2.TabIndex = 40;
+            this.btnhyper2.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnhyper1
             // 
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1067, 202);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 70);
-            this.button2.TabIndex = 41;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnhyper1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnhyper1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhyper1.Location = new System.Drawing.Point(1067, 216);
+            this.btnhyper1.Name = "btnhyper1";
+            this.btnhyper1.Size = new System.Drawing.Size(70, 70);
+            this.btnhyper1.TabIndex = 41;
+            this.btnhyper1.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnengine5
             // 
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(502, 603);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 70);
-            this.button3.TabIndex = 42;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnengine5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine5.Location = new System.Drawing.Point(492, 603);
+            this.btnengine5.Name = "btnengine5";
+            this.btnengine5.Size = new System.Drawing.Size(70, 70);
+            this.btnengine5.TabIndex = 42;
+            this.btnengine5.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnshld2
             // 
-            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(376, 504);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 70);
-            this.button4.TabIndex = 43;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnshld2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnshld2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnshld2.Location = new System.Drawing.Point(378, 504);
+            this.btnshld2.Name = "btnshld2";
+            this.btnshld2.Size = new System.Drawing.Size(70, 70);
+            this.btnshld2.TabIndex = 43;
+            this.btnshld2.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnengine1
             // 
-            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(502, 504);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 70);
-            this.button5.TabIndex = 44;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnengine1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine1.Location = new System.Drawing.Point(492, 504);
+            this.btnengine1.Name = "btnengine1";
+            this.btnengine1.Size = new System.Drawing.Size(70, 70);
+            this.btnengine1.TabIndex = 44;
+            this.btnengine1.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnengine2
             // 
-            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(588, 504);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 70);
-            this.button6.TabIndex = 45;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnengine2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine2.Location = new System.Drawing.Point(578, 504);
+            this.btnengine2.Name = "btnengine2";
+            this.btnengine2.Size = new System.Drawing.Size(70, 70);
+            this.btnengine2.TabIndex = 45;
+            this.btnengine2.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnengine3
             // 
-            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(677, 504);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(70, 70);
-            this.button7.TabIndex = 46;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnengine3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine3.Location = new System.Drawing.Point(664, 504);
+            this.btnengine3.Name = "btnengine3";
+            this.btnengine3.Size = new System.Drawing.Size(70, 70);
+            this.btnengine3.TabIndex = 46;
+            this.btnengine3.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnengine7
             // 
-            this.button8.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(677, 603);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(70, 70);
-            this.button8.TabIndex = 47;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnengine7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine7.Location = new System.Drawing.Point(664, 603);
+            this.btnengine7.Name = "btnengine7";
+            this.btnengine7.Size = new System.Drawing.Size(70, 70);
+            this.btnengine7.TabIndex = 47;
+            this.btnengine7.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnengine6
             // 
-            this.button9.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(588, 603);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 70);
-            this.button9.TabIndex = 48;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnengine6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine6.Location = new System.Drawing.Point(578, 603);
+            this.btnengine6.Name = "btnengine6";
+            this.btnengine6.Size = new System.Drawing.Size(70, 70);
+            this.btnengine6.TabIndex = 48;
+            this.btnengine6.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // btnengine4
             // 
-            this.button10.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(753, 504);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(70, 70);
-            this.button10.TabIndex = 49;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnengine4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine4.Location = new System.Drawing.Point(753, 504);
+            this.btnengine4.Name = "btnengine4";
+            this.btnengine4.Size = new System.Drawing.Size(70, 70);
+            this.btnengine4.TabIndex = 49;
+            this.btnengine4.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btnengine8
             // 
-            this.button11.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(753, 603);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(70, 70);
-            this.button11.TabIndex = 50;
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnengine8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnengine8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnengine8.Location = new System.Drawing.Point(753, 603);
+            this.btnengine8.Name = "btnengine8";
+            this.btnengine8.Size = new System.Drawing.Size(70, 70);
+            this.btnengine8.TabIndex = 50;
+            this.btnengine8.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -372,37 +328,33 @@ namespace StarWarsControl
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1277, 720);
+            this.Controls.Add(this.btnengine8);
+            this.Controls.Add(this.btnengine4);
+            this.Controls.Add(this.btnengine6);
+            this.Controls.Add(this.btnengine7);
+            this.Controls.Add(this.btnengine3);
+            this.Controls.Add(this.btnengine2);
+            this.Controls.Add(this.btnengine1);
+            this.Controls.Add(this.btnshld2);
+            this.Controls.Add(this.btnengine5);
+            this.Controls.Add(this.btnhyper1);
+            this.Controls.Add(this.btnhyper2);
             this.Controls.Add(this.imageShipBack);
             this.Controls.Add(this.ventSpeaker);
-            this.Controls.Add(this.btnshld2);
-            this.Controls.Add(this.button9_2);
-            this.Controls.Add(this.button8_2);
-            this.Controls.Add(this.button9_1);
-            this.Controls.Add(this.button8_1);
-            this.Controls.Add(this.button7_1);
-            this.Controls.Add(this.button6_2);
-            this.Controls.Add(this.button6_1);
-            this.Controls.Add(this.button5_2);
-            this.Controls.Add(this.button5_1);
+            this.Controls.Add(this.btnshld3);
+            this.Controls.Add(this.btnhyper5);
+            this.Controls.Add(this.btnhyper4);
+            this.Controls.Add(this.btnhyper6);
+            this.Controls.Add(this.btnhyper7);
+            this.Controls.Add(this.btnidk1);
             this.Controls.Add(this.btnshld1);
-            this.Controls.Add(this.button3_2);
+            this.Controls.Add(this.btnhyper8);
             this.Controls.Add(this.btncom1);
             this.Controls.Add(this.btncom2);
             this.Controls.Add(this.btncom3);
             this.Controls.Add(this.button3_1);
-            this.Controls.Add(this.button2_1);
+            this.Controls.Add(this.btnhyper3);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.Alpha;
@@ -418,35 +370,31 @@ namespace StarWarsControl
 
         #endregion
         private System.Windows.Forms.PictureBox imageShipBack;
-        private System.Windows.Forms.Button button2_1;
+        private System.Windows.Forms.Button btnhyper3;
         private System.Windows.Forms.Button button3_1;
         private System.Windows.Forms.Button btncom3;
         private System.Windows.Forms.Button btncom2;
         private System.Windows.Forms.Button btncom1;
-        private System.Windows.Forms.Button button3_2;
+        private System.Windows.Forms.Button btnhyper8;
         private System.Windows.Forms.Button btnshld1;
-        private System.Windows.Forms.Button button5_1;
-        private System.Windows.Forms.Button btnshld2;
-        private System.Windows.Forms.Button button5_2;
-        private System.Windows.Forms.Button button6_1;
-        private System.Windows.Forms.Button button6_2;
-        private System.Windows.Forms.Button button7_1;
-        private System.Windows.Forms.Button button8_1;
-        private System.Windows.Forms.Button button9_1;
-        private System.Windows.Forms.Button button8_2;
-        private System.Windows.Forms.Button button9_2;
+        private System.Windows.Forms.Button btnidk1;
+        private System.Windows.Forms.Button btnshld3;
+        private System.Windows.Forms.Button btnhyper7;
+        private System.Windows.Forms.Button btnhyper6;
+        private System.Windows.Forms.Button btnhyper4;
+        private System.Windows.Forms.Button btnhyper5;
         private System.Windows.Forms.PictureBox ventSpeaker;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnhyper2;
+        private System.Windows.Forms.Button btnhyper1;
+        private System.Windows.Forms.Button btnengine5;
+        private System.Windows.Forms.Button btnshld2;
+        private System.Windows.Forms.Button btnengine1;
+        private System.Windows.Forms.Button btnengine2;
+        private System.Windows.Forms.Button btnengine3;
+        private System.Windows.Forms.Button btnengine7;
+        private System.Windows.Forms.Button btnengine6;
+        private System.Windows.Forms.Button btnengine4;
+        private System.Windows.Forms.Button btnengine8;
     }
 }
 
