@@ -32,6 +32,9 @@ namespace StarWarsControl
         int leverPos = 0;     //current position of the hyperdrive lever
         const int leverMax = 10;    //Max value of hyperdrive lever
         const int leverMin = 0;     //Min value of the hyperdrive lever
+
+
+        int shouldReset = 0;
                              
         public Form1()
         {
@@ -63,6 +66,12 @@ namespace StarWarsControl
             btnengine7.Click += new EventHandler(this.btn1onClick);
             btnengine8.Click += new EventHandler(this.btn1onClick);
 
+            btnhyper5.Click += new EventHandler(this.reset1);
+            btnhyper4.Click += new EventHandler(this.reset2);
+            btnhyper6.Click += new EventHandler(this.reset3);
+            btnhyper3.Click += new EventHandler(this.reset4);
+            btnhyper1.Click += new EventHandler(this.reset5);
+
 
             btnhyper1.Click += new EventHandler(this.btn1onClick);
             btnhyper2.Click += new EventHandler(this.btn1onClick);
@@ -73,12 +82,13 @@ namespace StarWarsControl
             btnhyper7.Click += new EventHandler(this.btn1onClick);
             btnhyper8.Click += new EventHandler(this.btn1onClick);
 
-            btnidk1.Click += new EventHandler(this.playNoise);
+        //    btnidk1.Click += new EventHandler(this.playNoise);
+            btnidk1.Click += new EventHandler(this.btn1onClick);
 
 
             //---Init Serial com ports --- (port 6: PC, ttyACM0: Raspberry pi)
             // sPort = new SerialPort("/dev/ttyACM0", 9600);
-            sPort = new SerialPort("COM6", 9600);
+            sPort = new SerialPort("COM3", 9600);
             sPort.DataReceived += serialPort1_DataReceived;
 
             try
@@ -89,7 +99,39 @@ namespace StarWarsControl
 
             catch
             {
-                btncom2.Text = "";
+                sPort = new SerialPort("COM4", 9600);
+                sPort.DataReceived += serialPort1_DataReceived;
+
+                try
+                {
+                    sPort.Open();
+                    btncom2.Text = "1open";
+                }
+                catch
+                {
+                    sPort = new SerialPort("COM6", 9600);
+                    sPort.DataReceived += serialPort1_DataReceived;
+
+                    try
+                    {
+                        sPort.Open();
+                        btncom2.Text = "1open";
+                    }
+                    catch
+                    {
+                        sPort = new SerialPort("COM2", 9600);
+                        sPort.DataReceived += serialPort1_DataReceived;
+
+                        try
+                        {
+                            sPort.Open();
+                            btncom2.Text = "1open";
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
             }
 
 
@@ -105,10 +147,10 @@ namespace StarWarsControl
         void btn1onClick(Object sender, EventArgs e)
         {
             Button b = (Button)sender;
-
+            Random rnd = new Random();
             if (b.BackColor == Color.AliceBlue)
             {
-                Random rnd = new Random();
+                
                 int c = rnd.Next(0, 2);
                 if (c == 0)
                 {
@@ -125,13 +167,71 @@ namespace StarWarsControl
                 b.BackColor = Color.AliceBlue;
             }
 
+
+            int tmr = rnd.Next(0, 10);
+
+
+            if (tmr == 0)
+            {
+                playNoise(sender, e);
+            }
+
+
         }
 
-        void reset(Object sender, EventArgs e)
+        void reset1(Object sender, EventArgs e)
         {
-            if (sPort.IsOpen)
+            shouldReset = 1;
+        }
+        void reset2(Object sender, EventArgs e)
+        {
+            if (shouldReset == 1)
             {
-                sPort.Write("R");
+                shouldReset = 2;
+            }
+            else
+            {
+                shouldReset = 0;
+            }
+        }
+        void reset3(Object sender, EventArgs e)
+        {
+            if (shouldReset == 2)
+            {
+                shouldReset = 3;
+            }
+            else
+            {
+                shouldReset = 0;
+            }
+        }
+        void reset4(Object sender, EventArgs e)
+        {
+            if (shouldReset == 3)
+            {
+                shouldReset = 4;
+            }
+            else
+            {
+                shouldReset = 0;
+            }
+        }
+        void reset5(Object sender, EventArgs e)
+        {
+            if (shouldReset == 4)
+            {
+                shouldReset = 0;
+                if (sPort.IsOpen)
+                {
+                    sPort.Write("R");
+                }
+                r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Desktop\StifledLaugh.wav");
+
+                r2player.Play();
+            }
+            else
+            {
+                shouldReset = 0;
             }
         }
 
@@ -154,7 +254,7 @@ namespace StarWarsControl
         private void timerTriggered(Object sender, System.Timers.ElapsedEventArgs e)
         {
             Random rnd = new Random();
-            int tmr = rnd.Next(30000, 120000);
+            int tmr = rnd.Next(20000, 50000);
             r2Timer.Interval = tmr;
             
             int sound = rnd.Next(0, 7);
@@ -195,8 +295,7 @@ namespace StarWarsControl
         private void playNoise(Object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int sound = rnd.Next(0, 3);
-
+            int sound = rnd.Next(0, 5);
             switch (sound)
             {
                 case 0:
@@ -206,21 +305,19 @@ namespace StarWarsControl
                     r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Desktop\TestyBlowup.wav");
                     break;
                 case 2:
-                    r2player = new System.Media.SoundPlayer(@"C: \Users\Jakid\Desktop\Happy_ThreeChirp.wav");
+                    r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Desktop\Happy_ThreeChirp.wav");
+                    break;
+                case 3:
+                    r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Desktop\Happy_Confirmation.wav");
+                    break;
+                case 4:
+                    r2player = new System.Media.SoundPlayer(@"C:\Users\Jakid\Desktop\StifledLaugh.wav");                   
                     break;
                 default:
                     break;
             }
             r2player.Play();
         }
-
-        private void randomR2Sound()
-        {
-
-
-
-        }
-
 
         //Recieves data from the connecting serial port
         private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
