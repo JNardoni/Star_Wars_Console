@@ -1,3 +1,4 @@
+/*
 void runR2() {
 
   if(stepper1.stepsToGo() > 0) {
@@ -9,25 +10,28 @@ void runR2() {
       startR2Movement();
 
     }
+    else {
+      rotateCD--;
+   //   Serial.println(rotateCD);
+    }      
   }
-  else {
-    rotateCD--;
-    FastLED.delay(20);
-  }  
+
 }
 
 void startR2Movement() {
-     int stepsToMove = random(-5000,5000);
+     int stepsToMove = random(-8000,8000);
 
-     curStepperPosition += stepsToMove;
+     currentStepperPosition += stepsToMove;
 
     //Checks to see if R2 has moved too much from looking towards home. If so, resets him instead
-    if (curStepperPosition > 20000 || curStepperPosition < -20000) {
-      stepsToMove = -curStepperPosition;
-      curStepperPosition=0;
+    if (currentStepperPosition > 20000 || currentStepperPosition < -20000) {
+      stepsToMove = -currentStepperPosition;
+      currentStepperPosition=0;
     }
     
     stepper1.move(stepsToMove);
-    rotateCD = random(800, 2000);; //Set a new timeout for later
+    rotateCD = random(500, 1500); //Set a new timeout for later
   
 }
+
+*/

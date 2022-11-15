@@ -1,23 +1,21 @@
 #include <FastLED.h>
 #include <time.h>
 #include <stdlib.h>
-#include <Unistep2.h>
+//#include <Unistep2.h>
 
 
 //:::::::::::::::::::LED Definitions:::::::::::::::
 
 #define LED_PIN     13  //Pin
 
-#define NUM_LEDS    6
-#define NUM_STRIPS  30
+#define NUM_LEDS    279
+#define NUM_STRIPS  29
 
-
-//#define INPUT_PIN  2
-
-#define BRIGHTNESS  200
+#define BRIGHTNESS  250
 #define LED_TYPE    WS2811
-#define COLOR_ORDER RGB
+#define COLOR_ORDER GRB
 
+int ledCount = 0;
 
 class lightStrips {
 
@@ -26,15 +24,20 @@ class lightStrips {
     int numLights=0;
     int firstLight=0;
     int lastLight=0;
+    int ledOn = 0;
+    int dir= 0;
 
-    void init(int numLights, int firstLight) {
+    void init(int numLights) {
       this->numLights = numLights;
-      this->firstLight = firstLight;
+      this->firstLight = ledCount;
       this->lastLight = firstLight + numLights - 1;  
+      this->ledOn = firstLight;
+
+      ledCount += numLights;
     }
 };
 
-
+//int test = 0;
 
 CRGB leds[NUM_LEDS];
 
@@ -44,18 +47,15 @@ TBlendType    currentBlending;
 lightStrips lightBoard[NUM_STRIPS]; //Holds the arrays of all light strips
 
 int ledMode = 0;  
-/*3 different LED modes
+/*3 different LED mode
  * 0: Lights are temp on
- * 1. Hyperspace active, all lights on
- * 2. Lights are flashing up/down
- * 
+ * 1. Hyperspace active, all lights on* 
  * 
  */
 
 
 
-//:::::::::::::::::::Rotary Definitions:::::::::::::::::::::
-
+//:::::::::::::::::::Rotary Definitions::::::::::::::::::::
 #define CLK             6
 #define DT              7
 
@@ -65,7 +65,7 @@ uint8_t last_rotary_state = 0;
 
 int rotCount = 0;
 
-//::::::::::::::::Stepper Definitions:::::::::::::::::::
+/*::::::::::::::::Stepper R2 Definitions:::::::::::::::::::
 
 #define STEPS_PER_REV   4096
 #define STEP_DELAY      750
@@ -76,11 +76,18 @@ int rotateCD = 1000;
 
 int currentStepperPosition = 0;
 
+void runR2();
+*/
 //:::::::::::::::General Definitions:::::::::::::::::
+
+int mode = 0;
+//0: everything off
+//1: lights moving
 
 
 //static uint8_t mode = 0; 
 
+int ledOn = 0;
 
 /*
 #define UPDATES_PER_SECOND 50 
@@ -111,41 +118,43 @@ void setup() {
 
     //Setup individual LEDs
     
-    lightBoard[0].init(4,0);
-    lightBoard[1].init(4,0);
-    lightBoard[2].init(4,0);
-    lightBoard[3].init(4,0);
-    lightBoard[4].init(4,0);
-    lightBoard[5].init(4,0);
-    lightBoard[6].init(4,0);
-    lightBoard[7].init(4,0);
-    lightBoard[8].init(4,0);
-    lightBoard[9].init(4,0);
-    lightBoard[10].init(4,0);
-    lightBoard[11].init(4,0);
-    lightBoard[12].init(4,0);
-    lightBoard[13].init(4,0);
-    lightBoard[14].init(4,0);
-    lightBoard[15].init(4,0);
-    lightBoard[16].init(4,0);
-    lightBoard[17].init(4,0);
-    lightBoard[18].init(4,0);
-    lightBoard[19].init(4,0);
-    lightBoard[20].init(4,0);
-    lightBoard[21].init(4,0);
-    lightBoard[22].init(4,0);
-    lightBoard[23].init(4,0);
-    lightBoard[24].init(4,0);
-    lightBoard[25].init(4,0);
-    lightBoard[26].init(4,0);
-    lightBoard[27].init(4,0);
-    lightBoard[28].init(4,0);
+    lightBoard[0].init(16);
+    lightBoard[1].init(11);
+    lightBoard[2].init(11);
+    lightBoard[3].init(11);
+    lightBoard[4].init(11);
+    lightBoard[5].init(6);
+    lightBoard[6].init(11);
+    lightBoard[7].init(11);
+    lightBoard[8].init(11);
+    lightBoard[9].init(11);
+    lightBoard[10].init(11);
+
+    lightBoard[11].init(4);
+    lightBoard[12].init(11);
+    lightBoard[13].init(11);
+    lightBoard[14].init(11);
+    lightBoard[15].init(4);
+    lightBoard[16].init(11);
+    lightBoard[18].init(11);
+    lightBoard[19].init(11);
+    lightBoard[20].init(11);
+    
+    lightBoard[21].init(11);
+    lightBoard[22].init(11);
+    lightBoard[23].init(11);
+    lightBoard[24].init(4);
+    lightBoard[25].init(11);
+    lightBoard[26].init(6);
+    lightBoard[27].init(4);
+    lightBoard[28].init(11);
+    lightBoard[29].init(4);
 
     //::::::::Setup Stepper Motor:::::::::
 
     //stepper1 = Unistep2(8, 9, 10, 11, STEPS_PER_REV, STEP_DELAY);
 
-
+    rotCount = 0;
     //::::::::Setup Rotary Encoder::::::::::
     pinMode (CLK, INPUT);
     pinMode (DT, INPUT); 
@@ -167,32 +176,29 @@ void setup() {
 
    //First: Serial Message 
 
-
   if (Serial.available() > 0) {
 
     char in = Serial.read();
 
-    if (in == 'H') {
-   //   leds[0] = CRGB::Blue;
-        Serial.println("High");
-   //   FastLED.show();   
+    //Start the movement - auto turn on the stuff
+    if (in == 'S') {
+        mode = 1;
       }
-    
-    else if (in == 'L') {
+    //Turns off the device , turn mode to 0
+    if (in == 'O') {
+        mode = 0;      
+    }
 
-  //    leds[0] = CRGB::Green;
-        Serial.println("LOW");
-   //   FastLED.show();   
-
-      }
+    //R resets the Rotary Encoder
+    else if (in == 'R') {
+      rotCount = 0;
+    }
 
     else if (in == '\n') {
-        Serial.println("Endline");
     }
 
     else {
    //   leds[0] = CRGB::Red;
-        Serial.println("Error");
       }
   }
 
@@ -202,24 +208,40 @@ void setup() {
 
   if (rotary_state != last_rotary_state) {
     if (digitalRead(DT) != rotary_state) {
-      rotCount++;
-   //   Serial.println("+");
-      stepper1.move(100);
+      rotCount--;
+     Serial.println("+");
     }
     else {
-      rotCount--;
-  //    Serial.println("-");
+      rotCount++;
+      if (rotCount < 0) {
+        rotCount = 0;
+      }
+      Serial.println("-");
     }
    Serial.println(rotCount);
-   last_rotary_state= rotary_state;    
+   last_rotary_state= rotary_state;   
+
+    if (rotCount >= 4) {
+      moveLights();
+      mode = 1;   
+      Serial.println(   rotCount);
+    }
+    if (mode == 1 && rotCount < 4)
+    {
+      mode = 0;
+      turnOffLights();
+    }
+    
   }
-
-
+  if (mode == 1) {
+   moveLights();
+  }
+  
+  //FastLED.delay(1);
 
   //R2 Stepper
-  runR2();
+  //runR2();
 
- }
-
-   
 }
+
+ 
